@@ -1,0 +1,130 @@
+'use strict';
+angular.module('jerkFeWo.directives',[])
+  .directive('lazyloadCarousel', ['$compile', function($compile) {
+    return {
+    	restrict: 'E', 
+    	scope: {
+    		data: '=imageData'
+    	}, 
+    	compile: function(elem, attrib) {
+    		return function(scope, iElem, iAttrib, containerCtrl) {
+    			var currentIndex = 0;
+    			var totalSlides = scope.data.length;
+    			var animating = false;
+    			var html = '<div class="slideshow-container">';
+    			html += '<ul class="slideshow">';
+
+    			angular.forEach(scope.data, function(image, index) {
+    				html += '<li class="slideshow-item"><div><img slideshow-src="' + image.path + 'alt="' image.name '"/></div></li>';
+    			})
+
+    			html += "</ul>";
+
+    			html += '<div class="slideshow-container">' +
+    			'  <span class="slideshow-control slideshow-control-prev" ng-click="goToPrev()">&lsaquo;</span>' +
+                '  <span class="slideshow-control slideshow-control-next" ng-click="goToNext()">&rsaquo;</span>' +
+                '</div>';
+                html += '</div>';
+
+                iElem.append($compile(angular.element(html)(scope)));
+                	var slides1 = iElem[0].querySelectorAll("li");
+                	var slides2 = angular.element(iElem[0].querySelectorAll("li"));
+                	angular.element(iElem[0].querySelector('.current'));
+
+                	if(slides.length > 0) {
+						angular.element(slides[slides.length-1]).addClass("prev");
+
+						var prevImage = angular.element(slides[slides.length-1]).find("img");
+						loadImage(prevImage);
+						angular.element(slides[0]).addClass("current");
+
+						var currentImage = angular.element(slides[0]).find("img");
+						loadImage(currentImage);
+							    	
+						angular.element(slides[1]).addClass("next");
+
+						var nextImage = angular.element(slides[1]).find("img");
+						loadImage(nextImage);
+                	}
+
+            	scope.goToNext = function() {
+            		var index = currentIndex;
+            		if(currentIndex < totalSlides -1) {
+            			index++;
+            		} else {
+            			index = 0;
+            		}
+            		goToSlide(index);
+            	}
+
+            	scope.goToPrev = function() {
+            		var index = currentIndex;
+            		if (currentIndex > 0) {
+            			index --;
+            		} else {
+            			index = totalSlides - 1;
+            		}
+            		goToSlide(index);
+            	}
+
+            	scope.goToSlide = function(index) {
+            		if(animating) {
+            			return;
+            		} else {
+            			animating = true; 
+            			currentIndex = index;
+            		}
+
+            		angular.forEach(slides, function(slide, index) {
+            			angular.element(slide).removeClass("current prev next");
+            		});
+
+            		if(index < totalSlides && index >= 0){
+            			angular.element(slides[index]).addClass("current");
+            			var current=slides[index];
+
+            		current.addEventListener('webkitTransitionEnd', function(){transitionDone()});
+					current.addEventListener('oTransitionEnd', function(){transitionDone()},false);
+					current.addEventListener('webkitTransitionEnd', function(){transitionDone()},false);
+            		} else {
+
+            		}
+
+            		if(index < totalSlides-1) {
+						angular.element(slides[index+1]).addClass("next");
+						var image = angular.element(slides([index+1])).find("img");
+						loadImage(image);
+            		} else {
+            			angular.element(slides[0]).addClass("next");
+            			var image = angular.element(slidex[index+1]).find("img");
+            			loadImage(image);
+            		}
+
+               		if(index > 0) {
+						angular.element(slides[index-1]).addClass("prev");
+						var image = angular.element(slides([index-1])).find("img");
+						loadImage(image);
+            		} else {
+            			angular.element(slides[slidex.length-1]).addClass("prev");
+            			var image = angular.element(slidex[index-1]).find("img");
+            			loadImage(image);
+            		}
+            	}
+
+            	function loadImage(element) {
+            		if(element.attr('src') === undefined && element.attr("slideshow-src") !== undefined) {
+            			element.attr('src', element.attr("slideshow-src"));
+            		}
+            	}
+
+            	function transitionDone() {
+            		animating = false;
+					current.removeEventListener('webkitTransitionEnd', function(){transitionDone()});
+					current.removeEventListener('oTransitionEnd', function(){transitionDone()});
+					current.removeEventListener('transitionEnd', function(){transitionDone()});
+            	}
+
+    		}
+    	}
+    };
+  }]);
