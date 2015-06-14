@@ -13,9 +13,9 @@ angular.module('jerkFewoApp', [
     'ngResource',
     'ngRoute',
     'ngTouch', 
-    'slideshowModule',
-    'appDirectives', 
-    'locationModule',
+    'jerk.fewo.slideshow',
+    'jerk.fewo.slideshow.directive', 
+    'jerk.fewo.location',
     'uiGmapgoogle-maps',
     'jerk.fewo.house',
     'jerk.fewo.contact',
@@ -45,7 +45,12 @@ angular.module('jerkFewoApp', [
       .when('/impressum', {
         templateUrl: 'views/impressum.html',
         controller: 'ImpressCtrl'
-      });
+      })
+      .when('/404', {
+        templateUrl: '404.html'
+      })
+      .otherwise({
+        redirectTo: '/404'});
   })
   ;
  

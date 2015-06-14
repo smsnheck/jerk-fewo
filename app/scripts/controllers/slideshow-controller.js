@@ -1,5 +1,5 @@
-"use strict";
-var appControllers = angular.module('slideshowModule', []);
+'use strict';
+var appControllers = angular.module('jerk.fewo.slideshow', []);
 
 appControllers.controller('SlideshowCtrl', ['$scope', function($scope) {
     $scope.imageData = [

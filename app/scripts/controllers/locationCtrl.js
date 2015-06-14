@@ -1,4 +1,5 @@
-var appControllers = angular.module('locationModule', ['uiGmapgoogle-maps']);
+'use strict';
+var appControllers = angular.module('jerk.fewo.location', ['uiGmapgoogle-maps']);
 
 
 appControllers.controller('LocationCtrl', function($scope){

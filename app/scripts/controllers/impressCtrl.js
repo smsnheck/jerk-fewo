@@ -1,5 +1,5 @@
-"use strict";
+'use strict';
 var impressModule = angular.module('jerk.fewo.impress', []);
-impressModule.controller('impressCtrl', ['$scope', '$filter', function($scope, $filter) {
+impressModule.controller('ImpressCtrl', [function() {
 	
 }]);
