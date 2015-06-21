@@ -89,6 +89,7 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
     		};
     		
     		function goToSlide(index) {
+			sliderheight();
     			if(animating) {
 	    			return;
     			}
@@ -135,7 +136,7 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 	    			var image = angular.element(slides[index-1]).find('img');
 					loadImage(image);
     			}
-    			sliderheight();
+    			
     		}
 			
 			function sliderheight(){
