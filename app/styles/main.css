@@ -103,12 +103,14 @@ h1 {
 
 ul.slideshow {
   display: block;
-  width: 600px;
-  height: 423px;
+  max-width: 600px;
+  max-height: 423px;
   margin: 0;
   padding: 0;
   position: relative;
   overflow: hidden;
+  width: 75vw;
+  height: 75vh;
 }
 ul.slideshow li {
   display: block;
