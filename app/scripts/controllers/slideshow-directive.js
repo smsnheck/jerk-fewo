@@ -145,7 +145,7 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 				//$('ul.slideshow').css({'height': divHeight, 'width': divWidth});
 				$('.slideshow-controls').css({'height': divHeight, 'width': divWidth});
 				$('.slideshow-control').css({'height': divHeight, 'line-height': divHeight + 'px'});
-				console.log('Setting width/height to: ' + width + '/' + height);
+				console.log('Setting width/height to: ' + divWidth + '/' + divHeight);
 			}
     		    		
     		function transitionDone() {
