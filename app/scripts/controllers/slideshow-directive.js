@@ -142,7 +142,7 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 				var divHeight = $('li.slideshow-item.current div img').height(); 
 				var divWidth = $('li.slideshow-item.current div img').width();
 				$('.slideshow-item.current').css({'height': divHeight, 'width': divWidth}); 
-				$('ul.slideshow').css({'height': divHeight, 'width': divWidth});
+				//$('ul.slideshow').css({'height': divHeight, 'width': divWidth});
 				$('.slideshow-controls').css({'height': divHeight, 'width': divWidth});
 				$('.slideshow-control').css({'height': divHeight, 'line-height': divHeight + 'px'});
 			}
