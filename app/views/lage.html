@@ -3,16 +3,18 @@
 </style>
 
 <div class="jumbotron opacity80">
-  <h2>Die Lage der Ferienwohnung</h2>
+  <h2>Die Lage der Ferienhaus</h2>
   <p class="lead">
-    So schön liegt die Ferienwohnung.
+    So schön liegt die Ferienhaus.
   </p>
   
 </div>
 
 <div class="container">
 <div class="well opacity80">
-<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+	<ui-gmap-marker coords="marker.coords" idkey="marker.id" options="marker.options">
+</ui-gmap-google-map>
   </div>
 </div>
 
