@@ -152,12 +152,12 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 				animating = false;
 				
 				var current = slides[currentIndex];    			
-				
+				sliderheight();	
 				current.removeEventListener('webkitTransitionEnd', function(){transitionDone();});
 				current.removeEventListener('oTransitionEnd', function(){transitionDone();});
 				current.removeEventListener('transitionEnd', function(){transitionDone();});				
 			}    		
-			sliderheight()
+			
     	};
     }
   };
