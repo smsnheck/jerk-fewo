@@ -18,8 +18,10 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 	    	html += '<ul class="slideshow">';
 	    	
 	    	angular.forEach(scope.data,function(image) {
-		    	html += '<li class="slideshow-item"><div><img slideshow-src="' + image.path + '" alt="' + image.name + '" /></div></li>';
-		    		
+		    	html += '<li class="slideshow-item"><div><img slideshow-src="' + image.path + '" alt="' + image.name + '" style="max-width:100%;max-height:100%;margin:auto;display:block;" class="img-responsive"/></div></li>';
+
+				
+				
 	    	});
 	    	
 	    	html += '</ul>';
@@ -133,8 +135,17 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 	    			var image = angular.element(slides[index-1]).find('img');
 					loadImage(image);
     			}
-    			
+    			sliderheight();
     		}
+			
+			function sliderheight(){
+				var divHeight = $('li.slideshow-item.current div img').height(); 
+				var divWidth = $('li.slideshow-item.current div img').width();
+				$('.slideshow-item.current').css({'height': divHeight, 'width': divWidth}); 
+				$('ul.slideshow').css({'height': divHeight, 'width': divWidth});
+				$('.slideshow-controls').css({'height': divHeight, 'width': divWidth});
+				$('.slideshow-control').css({'height': divHeight, 'line-height': divHeight + 'px'});
+			}
     		    		
     		function transitionDone() {
 				
