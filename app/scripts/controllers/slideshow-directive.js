@@ -39,8 +39,7 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 	    		
 	    		if(element.attr('src') === undefined && element.attr('slideshow-src') !== undefined) {
 			    	element.attr('src', element.attr('slideshow-src'));		    	
-		    	}
-    			sliderheight();	    		
+		    	}    		
     		}
 
 	    	var slides = iElement[0].querySelectorAll('li');
@@ -158,6 +157,7 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 				current.removeEventListener('oTransitionEnd', function(){transitionDone();});
 				current.removeEventListener('transitionEnd', function(){transitionDone();});				
 			}    		
+			sliderheight()
     	};
     }
   };
