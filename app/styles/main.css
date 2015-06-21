@@ -121,8 +121,8 @@ ul.slideshow li {
   -webkit-transition: left 500ms ease-out;
   transition: left 500ms ease-out;
   left: 600px;
-  width: 600px;
-  height: 423px;
+  /*width: 600px;
+  height: 423px;*/
 }
 ul.slideshow li img {
   //width: 100%;
