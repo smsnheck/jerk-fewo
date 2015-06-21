@@ -143,8 +143,8 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 				var divWidth = $('li.slideshow-item.current div img').width();
 				$('.slideshow-item.current').css({'max-height': divHeight, 'max-width': divWidth}); 
 				$('ul.slideshow').css({'max-height': divHeight, 'max-width': divWidth});
-				$('.slideshow-controls').css({'height': divHeight, 'width': divWidth});
-				$('.slideshow-control').css({'height': divHeight, 'line-height': divHeight + 'px'});
+				/*$('.slideshow-controls').css({'height': divHeight, 'width': divWidth});
+				$('.slideshow-control').css({'height': divHeight, 'line-height': divHeight + 'px'});*/
 				console.log('Setting width/height to: ' + divWidth + '/' + divHeight);
 			}
     		    		
