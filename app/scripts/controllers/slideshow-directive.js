@@ -18,7 +18,7 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 	    	html += '<ul class="slideshow">';
 	    	
 	    	angular.forEach(scope.data,function(image) {
-		    	html += '<li class="slideshow-item"><div><img slideshow-src="' + image.path + '" alt="' + image.name + '" style="max-width:100%;max-height:100%;margin:auto;display:block;" class="img-responsive"/></div></li>';
+		    	html += '<li class="slideshow-item"><div><img slideshow-src="' + image.path + '" alt="' + image.name + '"class="img-responsive"/></div></li>';
 
 				
 				
