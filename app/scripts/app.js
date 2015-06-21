@@ -46,6 +46,9 @@ angular.module('jerkFewoApp', [
         templateUrl: 'views/impressum.html',
         controller: 'ImpressCtrl'
       })
+      .when('/kalender', {
+        templateUrl: 'views/kalender.html'
+      })
       .when('/404', {
         templateUrl: '404.html'
       })
