@@ -39,7 +39,8 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 	    		
 	    		if(element.attr('src') === undefined && element.attr('slideshow-src') !== undefined) {
 			    	element.attr('src', element.attr('slideshow-src'));		    	
-		    	}	    		
+		    	}
+    			sliderheight();	    		
     		}
 
 	    	var slides = iElement[0].querySelectorAll('li');
@@ -135,7 +136,6 @@ appDirectives.directive('slideshowLazy', ['$compile', function($compile) {
 	    			var image = angular.element(slides[index-1]).find('img');
 					loadImage(image);
     			}
-    			sliderheight();
     		}
 			
 			function sliderheight(){
