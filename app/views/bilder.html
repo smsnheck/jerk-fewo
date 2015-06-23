@@ -8,10 +8,7 @@
 
 <div class="container" ng-controller="SlideshowCtrl">
 <div class="well opacity80">
-	<!--<slideshow-lazy image-data="imageData" class="center">
- 	</slideshow-lazy>-->
-	
-	<slick lazy-load='ondemand' slides-to-show=3 slides-to-scroll=1 class="slider lazy">
+	<slick lazy-load='ondemand' slides-to-show=1 slides-to-scroll=1 class="slider lazy" dots="true" mobileFirst="true" speed="500">
       <div><div class="image"><img data-lazy="images/img_01.jpg"/></div></div>
       <div><div class="image"><img data-lazy="images/img_02.jpg"/></div></div>
       <div><div class="image"><img data-lazy="images/img_03.jpg"/></div></div>
@@ -19,10 +16,6 @@
       <div><div class="image"><img data-lazy="images/img_05.jpg"/></div></div>
       <div><div class="image"><img data-lazy="images/img_06.jpg"/></div></div>
     </slick>
-	
-	
   </div>
-</div>
-
-    
+</div>    
 </body>
