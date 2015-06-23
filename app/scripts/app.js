@@ -14,7 +14,7 @@ angular.module('jerkFewoApp', [
     'ngRoute',
     'ngTouch', 
     'jerk.fewo.slideshow',
-    'jerk.fewo.slideshow.directive', 
+    'slick', 
     'jerk.fewo.location',
     'uiGmapgoogle-maps',
     'jerk.fewo.house',
