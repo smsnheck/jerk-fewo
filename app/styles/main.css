@@ -211,4 +211,9 @@ ul.slideshow li.prev {
 	height: 600px !important;
 }
 
+div.image img {
+margin-left: auto;
+margin-right: auto;
+}
+
 /*# sourceMappingURL=style.css.map */
