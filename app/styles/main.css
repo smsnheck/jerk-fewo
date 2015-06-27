@@ -216,3 +216,11 @@ margin-left: auto;
 margin-right: auto;
 margin-bottom: 3em;
 }
+
+.slick-prev {
+	left: 0px;
+}
+
+.slick-next {
+	right: 0px;
+}
